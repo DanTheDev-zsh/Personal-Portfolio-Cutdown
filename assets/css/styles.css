@@ -3,8 +3,13 @@
     --background-light: #465a5f;
     --forground-light: #F8F8F2;
     --link-color: #12ccf1;
+    --button-color: #1266f1;
     --monokai-dark-transparent: rgba(39,50,56,0.4);
     --monokai-font-bright: #d28f45;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -122,6 +127,10 @@ body {
     .container {
         max-width: 581px;
     } 
+    .responsive-img-sizing { /* adjust image size to be viewed on laptop screens */
+        max-width: 80%;
+        height: auto;
+    } 
 }
 
 /* mobile device limit on text */
@@ -129,23 +138,13 @@ body {
     .container {
         max-width: 390px;
     } 
-}
-
-/* adjust image size to be viewed on laptop screens */
-@media (max-width: 950px) {
-    .responsive-img-sizing {
-        max-width: 80%;
-        height: auto;
-    } 
-}
-
-/* shrink image to be viewed on tablets */
-@media (max-width: 700px){
-    .responsive-img-sizing  {
+    .responsive-img-sizing  { /* shrink image to be viewed on tablets */
         max-width: 75%;
         height: auto;
     }
 }
+
+
 
 /* enlarging image to be viewed on xs devices */
 @media (max-width: 320px){
@@ -155,7 +154,7 @@ body {
     }
 }
 
-
+/* for project flex items to display properly on thresholds of screen size */
 @media (min-width: 1112px) {
     .dynamic-flex {
         display: flex;
@@ -174,6 +173,7 @@ body {
     }
 }
 
+/* for project flex items to display properly on thresholds of screen size */
 @media (max-width: 1111px) {
     .dynamic-flex {
         display: flex;
@@ -191,6 +191,7 @@ body {
     }
 }
 
+/* for project flex items to display properly on thresholds of screen size */
 @media (max-width: 380) {
     .dynamic-flex {
         display: flex;
@@ -218,11 +219,20 @@ body {
     --gutter-x: 1.5rem; /* this amount of space (16px*1.5) is standard for gutter-x */
 }
 
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
 
 body {
-    /* position: absolute; */
     width: 100vw;
     box-sizing: border-box;
+    margin:0;
+    font-family:var(--font-roboto);
 }
 
 
@@ -262,6 +272,7 @@ body {
     padding-left: var(--gutter-x,.75rem);
     margin-right: auto;
     margin-left: auto;
+    margin-top: 5px;
     flex-grow: 1;
 }
 
@@ -286,17 +297,8 @@ body {
     padding: 0.5rem;
 }
 
-#bg-image {
-    background-image: url(../img/ncrwallpaper.jpg);
-    position: relative;
-    overflow: hidden;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50%;
-    height: 100vh;
-    display: block;
+.icon-color {
+    color: var(--button-color);
 }
 
 .mask { /* masking over the background image for darker tone */
@@ -330,7 +332,7 @@ body {
 /* Model Design Bootstrap's button style */
 .btn-primary {
     color: #fff;
-    background-color: #1266f1;
+    background-color: var(--button-color);
 }
 /* Model Design Bootstrap's button style */
 .btn {
@@ -353,6 +355,11 @@ body {
         box-shadow .15s ease-in-out;
 }
 
+footer.div-light-styles {
+    padding-top:2rem!important;
+    padding-bottom:2rem!important;
+}
+
 h1.mb-5 {
     margin-bottom: 3rem;
     font-size: calc(1.375rem + 1.5vw);
@@ -360,6 +367,19 @@ h1.mb-5 {
     font-weight: 500%;
     line-height: 1.2;
     color:white;
+}
+
+#bg-image {
+    background-image: url(../img/ncrwallpaper.jpg);
+    position: relative;
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    height: 100vh;
+    display: block;
 }
 
 @media (min-width: 992px) {
