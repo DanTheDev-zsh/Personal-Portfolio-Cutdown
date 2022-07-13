@@ -98,6 +98,13 @@ body {
     object-fit: contain;
 }
 
+#project-1-btn {
+    margin-top: 3em;
+}
+
+#project-1-btn > a {
+    text-decoration: none;
+}
 
 /* media queries */
 
@@ -334,6 +341,7 @@ body {
     color: #fff;
     background-color: var(--button-color);
 }
+
 /* Model Design Bootstrap's button style */
 .btn {
     text-transform: uppercase;
